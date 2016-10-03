@@ -14,7 +14,6 @@ from sklearn.metrics import classification_report
 
 
 morgan_bnb = joblib.load('../chembl_22/models/1uM/mNB_1uM_all.pkl')
-#mlb = joblib.load('../chembl_22/mNB_1uM_targets.pkl')
 
 def topNpreds(m,fp,N=5):
     probas = list(morgan_bnb.predict_proba(fp)[0])
@@ -24,7 +23,6 @@ def topNpreds(m,fp,N=5):
 
 print morgan_bnb.multilabel_
 
-#classes = list(morgan_bnb.classes_)
 classes = list(morgan_bnb.targets)
 
 print "targets", len(classes)
@@ -32,9 +30,6 @@ print "targets", len(classes)
 print "reading drugs..."
 
 mols = pd.read_csv('../chembl_22/chembl_drugs.csv')
-
-####
-##mols = mols.head(10)
 
 print mols.head()
 
