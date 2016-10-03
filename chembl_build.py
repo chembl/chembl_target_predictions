@@ -14,9 +14,6 @@ print 'Data preparation'
 
 data = pd.read_csv('../chembl_22/chembl_1uM.csv')
 
-#############
-###data = data.head(1000)
-
 print "data", data.shape
 
 mols = data[['MOLREGNO','SMILES']]
@@ -42,7 +39,6 @@ dataset = pd.merge(mols, targets, left_index=True, right_index=True)
 dataset = dataset.ix[dataset['ROMol'].notnull()]
 
 print dataset.shape
-
 
 # Learning
 print 'Learning'
@@ -82,15 +78,6 @@ yy = [c for c in dataset['targets']]
 mlb = MultiLabelBinarizer()
 y = mlb.fit_transform(yy) ## this is for newer versions of sklearn
 
-#joblib.dump(mlb, '../chembl_22/mNB_1uM_targets.pkl')
-
-#print mlb.classes_ 
-
-#print y
-
-#morgan_bnb = OneVsRestClassifier(BernoulliNB())
-#morgan_bnb = OneVsRestClassifier(BernoulliNB(), n_jobs=4)
-###morgan_bnb = OneVsRestClassifier(MultinomialNB(), n_jobs=8)
 morgan_bnb = OneVsRestClassifier(MultinomialNB())
 
 print 'model building'
@@ -101,16 +88,7 @@ morgan_bnb.targets = mlb.classes_
 print morgan_bnb.multilabel_
 print morgan_bnb.targets
 
-#print morgan_bnb.classes_
-
-#print morgan_bnb.label_binarizer_.classes_
-
 joblib.dump(morgan_bnb, '../chembl_22/models/1uM/mNB_1uM_all.pkl')
-
-##predicted = morgan_bnb.predict(X)
-##print predicted
-##all_labels = mlb.inverse_transform(predicted)
-##print all_labels
 
 print 'done!'
 
