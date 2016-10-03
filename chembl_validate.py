@@ -4,23 +4,15 @@ from rdkit.Chem import AllChem as Chem
 from rdkit.Chem.Draw import IPythonConsole
 from rdkit.Chem import PandasTools
 import pandas as pd
-
 from collections import OrderedDict
-
 import numpy
 from rdkit import DataStructs
-
 from sklearn import cross_validation
-
 import pickle
 
 print 'Data preparation'
 
 data = pd.read_csv('../chembl/chembl_1uM.csv')
-
-
-#############
-###data = data.head(1000)
 
 print "data", data.shape
 
@@ -119,17 +111,14 @@ for train_ind, test_ind in skf:
         pred_targ.append(pt)
         probas.append(prb)
     
-    
     data_test = dataset.iloc[test_ind]
     print len(pred_targ)
     print data_test.shape
     data_test['pred_targets'] = pred_targ
     data_test['probabilities'] = probas
 
-    
     print data_test.shape
     data_test.to_csv('../chembl/validation/multi/pred_1uM_{0}.csv'.format(counter),sep='\t')
-
 
 print 'done!'
 
