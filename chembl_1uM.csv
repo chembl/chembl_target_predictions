@@ -1,0 +1,6 @@
+"MOLREGNO","TID","SMILES","PREF_NAME","CHEMBL_ID","TARGET_PREF_NAME","TARGET_CHEMBL_ID","TARGET_ACCESSION"
+23,11130,"Br\C=C\1/CCC(C(=O)O1)c2cccc3ccccc23","BROMOENOL LACTONE","CHEMBL6206","Aldehyde dehydrogenase 1A1","CHEMBL3577","P00352"
+23,11289,"Br\C=C\1/CCC(C(=O)O1)c2cccc3ccccc23","BROMOENOL LACTONE","CHEMBL6206","Anandamide amidohydrolase","CHEMBL3229","P97612"
+23,103670,"Br\C=C\1/CCC(C(=O)O1)c2cccc3ccccc23","BROMOENOL LACTONE","CHEMBL6206","Bloom syndrome protein","CHEMBL1293237","P54132"
+46,17066,"Nc1cc[n+](Cc2ccc(CCc3ccc(C[n+]4ccc(N)c5ccccc45)cc3)cc2)c6ccccc16",,"CHEMBL429017","Acetylcholinesterase","CHEMBL4768","P23795"
+46,20168,"Nc1cc[n+](Cc2ccc(CCc3ccc(C[n+]4ccc(N)c5ccccc45)cc3)cc2)c6ccccc16",,"CHEMBL429017","Butyrylcholinesterase","CHEMBL5077","Q9N1N9"
